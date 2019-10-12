@@ -1,0 +1,33 @@
+import turtle as t
+import math
+t.hideturtle()
+def draw_pos(x,y):
+    t.clear()
+    t.penup()
+    t.goto(0,0)
+    r = int(t.numinput("입력","반지름:"))
+    angle = int(t.numinput("입력", "각도:"))
+    a = (180 - angle) / 2
+    s = 2 * r * math.cos(math.radians(a))
+    t.speed(0)
+    t.penup()
+    t.goto(0, -r)
+    t.pendown()
+    t.circle(r)
+    t.penup()
+    t.goto(0, 0)
+    for rotate in range(120):
+        t.penup()
+        t.forward(r)
+        t.left(180 - a)
+        t.pendown()
+        t.forward(s)
+        t.left(180 - a)
+        t.penup()
+        t.forward(r)
+        t.left(180 - angle)
+        t.right(5)
+b = t.Screen()
+b.onscreenclick(draw_pos)
+b.listen()
+t.done()
