@@ -5,8 +5,8 @@ def draw_pos(x,y):
     t.clear()
     t.penup()
     t.goto(0,0)
-    r = int(t.numinput("입력","반지름:"))
-    angle = int(t.numinput("입력", "각도:"))
+    r = int(t.numinput("insert","radius:"))
+    angle = int(t.numinput("insert", "angle:"))
     a = (180 - angle) / 2
     s = 2 * r * math.cos(math.radians(a))
     t.speed(0)
